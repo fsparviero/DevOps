@@ -1,0 +1,74 @@
+#Building from SCM
+
+Update the Jenkins Plugins and Configure the Maven Installer
+Use a browser to navigate to the provided public IP address for the server. Remember to add :8080 to the end of the IP address to specify the default Jenkins port.
+
+Log in with the credentials provided in the lab guide instructions.
+
+Update the Jenkins Plugins
+In the menu at the top-right of the window, click the bell icon.
+
+Scroll down to the UI update, and click Apply Migration.
+
+In the menu on the left, click Manage Jenkins.
+
+Scroll down to the warning at the bottom, and click Go to plugin manager.
+
+Check the top checkbox to select all available plugins and click Update.
+
+Once all the items have been marked for actions, scroll down and check the Restart Jenkins when installation is complete and no jobs are running checkbox.
+
+Once restarted, reconnect to Jenkins with the credentials provided.
+
+Configure the Maven Installer
+In the menu on the left, click Manage Jenkins.
+
+Scroll down and, under System Configuration, click Tools.
+
+Under Maven installations, click Add Maven.
+
+In the Name box, enter M3.
+
+Make sure Install automatically is checked.
+
+Click Save.
+
+Configure the Build to Use Maven and Make the Index File
+In the menu on the left, click New Item.
+
+In the Enter an item name field, enter mavenproject.
+
+Select Freestyle project.
+
+Click OK.
+
+In the menu on the left, click Source Code Management.
+
+Under Source Code Management, select Git.
+
+Copy the git repository link from the lab instructions and enter it into the Repository URL box.
+
+Scroll down, and under Build Steps, click the Add build step dropdown and select the Invoke top-level Maven targets option.
+
+From the Maven Version dropdown, select M3.
+
+In the Goals field, enter clean package.
+
+Click the Add build step dropdown and select the Execute shell option.
+
+In the Command window, enter bin/makeindex.
+
+Scroll down, and under Post-build Actions, click the Add post-build action dropdown and select the Archive the artifacts option.
+
+Under Archive the artifacts, click the Advanced dropdown and check the Fingerprint all archived artifacts checkbox.
+
+In the Files to archive field, enter index.jsp.
+
+Click Save.
+
+In the menu on the left, click Build Now.
+
+Refresh the window and click the View link next to index.jsp. Verify the contents of the index.jsp file.
+
+Conclusion
+Congratulations — you've completed this hands-on lab!
