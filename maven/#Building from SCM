@@ -1,4 +1,4 @@
-#Building from SCM
+# Building from SCM
 
 Update the Jenkins Plugins and Configure the Maven Installer
 Use a browser to navigate to the provided public IP address for the server. Remember to add :8080 to the end of the IP address to specify the default Jenkins port.
